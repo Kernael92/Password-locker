@@ -57,6 +57,11 @@ class TestCredential(unittest.TestCase):
         Function to create an account's credentials before each test.
         '''
         self.new_credential = Credential("Glenn","Instagram","glennjoy","oketch001")
+
+    def tearDown(self):
+        '''
+        tearDown method that does clean up after case has run.
+        ''' 
     def test_init(self):
         '''
         To check if the object is initialized properly.
@@ -65,6 +70,14 @@ class TestCredential(unittest.TestCase):
         self.assertEqual(self.new_credential.site_name,"Instagram")
         self.assertEqual(self.new_credential.account_name,"glennjoy")
         self.assertEqual(self.new_credential.password,"oketch001")
+    def test_save_credential(self):
+        '''
+        To check if the new credentials are saved into the credential list
+        '''
+        self.new_credential.save_credential()
+        facebook = Credential("Bobby","facebook","bobbyjoe","bobby001") #new credential
+        facebook.save_credential()
+        self.assertEqual(len(Credential.credentials_list),2)
 
 
 if __name__ == '__main__':
