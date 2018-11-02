@@ -1,5 +1,6 @@
 import unittest #Importing the unittest module
-from user_credential import User
+from user_credential import User 
+from credentials import Credential
 
 
 
@@ -16,6 +17,11 @@ class TestUser(unittest.TestCase):
         Set up method to run before each test cases.
         '''
         self.new_user = User("Kernael", "Apuko","oketch92") #create user object
+    def tearDown(self):
+        '''
+        tearDown method that does clean up after case has run.
+        ''' 
+        User.users_list = []
     def test_init(self):
         '''
         test case to test if the object is initialized properly
@@ -46,6 +52,19 @@ class TestCredential(unittest.TestCase):
     Agrs:
         unittest.TestCase: TestCase class that helps in creating test cases 
     '''
+    def setUp(self):
+        '''
+        Function to create an account's credentials before each test.
+        '''
+        self.new_credential = Credential("Glenn","Instagram","glennjoy","oketch001")
+    def test_init(self):
+        '''
+        To check if the object is initialized properly.
+        '''
+        self.assertEqual(self.new_credential.user_name,"Glenn")
+        self.assertEqual(self.new_credential.site_name,"Instagram")
+        self.assertEqual(self.new_credential.account_name,"glennjoy")
+        self.assertEqual(self.new_credential.password,"oketch001")
 
 
 if __name__ == '__main__':

@@ -13,15 +13,15 @@ class User:
         self.first_name = first_name
         self.last_name = last_name
         self.password = password
+    
     def  save_user(self):
         '''
         save_user method saves contact objects into users list
         '''
         User.users_list.append(self)
-    class Credential:
-        '''
-        Class to create user account credentials, generate passwords and store their information.
-        '''
-        credentials_list = [] #Empty credentials list
+    
+
+    
+
     
 
