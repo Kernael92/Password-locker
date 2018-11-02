@@ -78,16 +78,11 @@ class TestCredential(unittest.TestCase):
         facebook = Credential("Bobby","facebook","bobbyjoe","bobby001") #new credential
         facebook.save_credential()
         self.assertEqual(len(Credential.credentials_list),2)
-    def test_display_credential(self):
+    def test_display_all_credentials(self):
         '''
         To check if the test_display_credential method displays the correct dredentials
         '''
-        self.new_credential.save_credential()
-        facebook = Credential("Bobby","facebook","bobbyjoe","bobby001") #new credential
-        facebook.save_credential()
-        twitter = Credential("Jane","twitter","janejay","jayjan01")
-        twitter.save_credential()
-        self.assertEqual(len(Credential.display_credential(twitter.user_name)),2)
+        self.assertEqual(len(Credential.display_credentials(),Credential.credentials_list)
     def test_find_by_site_name(self):
         '''
         Test to check if the find_by_site_name method returns the correct credentials

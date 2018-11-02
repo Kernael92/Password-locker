@@ -22,14 +22,25 @@ class Credential:
         '''
         Credential.credentials_list.append(self)
     @classmethod
-    def display_credential(self):
+    def display_credentials(cls):
         '''
         Class method to display the list of credentials saved.
         '''
-        user_credentials_list = []
-        for credential in cls.credentials_list:
-            if credential.user_name == user_name:
-                user_credentials_list.append(credential)
-        return user_credentials_list
+       return cls.credentials_list
     @classmethod
-    
+    def find_by_site_name(cls,site_name):
+        '''
+        Method that takes in a site name and returns a credential that matches the site name.
+
+        Args:
+            site_name: site name to search.
+        Return:
+            Site name of the credential that matches the site_name
+
+        '''
+        for credential in cls.credentials_list:
+            if credential.site_name == site_name:
+                return site_name
+
+
+
