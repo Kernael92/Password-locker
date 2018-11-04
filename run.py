@@ -26,3 +26,8 @@ def credential_exist(site_name):
     Function that check if a credential exists with that site_name and return a Boolean
     '''
     return Credential.credential_exist(site_name)
+def generate_password(self,min_char = 8, max_char = 12, allchar = string.ascii_letters + string.punctuation + string.digits):
+    '''
+    Function that generates a password
+    '''
+    return ''.join(random.choice(allchar) for x in range(min_char,max_char))
