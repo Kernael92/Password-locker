@@ -64,6 +64,15 @@ class Credential:
         '''
         gen_password = ''.join(random.choice(allchar) for x in range(min_char,max_char))
         return gen_password
+    @classmethod
+    def copy_credential(cls,site_name):
+        '''
+        Class method that copies a credential's info
+        '''
+        find_credential = Credential.find_by_site_name(site_name)
+        return pyperclip.copy(find_credential.password)
+
+        
         
 
 

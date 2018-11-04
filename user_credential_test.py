@@ -103,7 +103,21 @@ class TestCredential(unittest.TestCase):
     #     gmail.save_credential()
     #     gen_password = gmail.password("")
     #     self.assertEqual(gen_password(),gmail.password)
-        
+
+    def test_copy_credential(self):
+        '''
+        Test to confirm that we are copying the account name from a found credential
+        '''
+        self.new_credential.save_credential()
+        facebook = Credential("Bobby","facebook","bobbyjoe","bobby001") #new credential
+        facebook.save_credential()
+        find_credential = None
+        for credential in Credential.credentials_list:
+		        find_credential =Credential.find_by_site_name(credential.site_name)
+		        return pyperclip.copy(find_credential.password)
+        Credential.copy_credential(self.new_credential.site_name)
+        self.assertEqual("bobby001",pyperclip.paste())
+
 
     
 
