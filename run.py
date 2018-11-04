@@ -16,3 +16,8 @@ def display_credentials():
     Function that returns all the saved credentials
     '''
     return Credential.display_credentials()
+def find_credential(site_name):
+    '''
+    Function that finds a contact by number and returns the contact
+    '''
+    return Credential.find_by_site_name(site_name)
