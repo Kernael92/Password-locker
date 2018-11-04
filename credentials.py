@@ -6,7 +6,7 @@ class Credential:
     Class to create user account credentials, generate passwords and store their information.
     '''
     credentials_list = [] #Empty credentials list
-    user_credentials_list [] #Empty user credential list
+    
     def __init__(self,user_name,site_name,account_name,password):
         '''
         Helps define properties for our credential objects
@@ -26,7 +26,7 @@ class Credential:
         '''
         Class method to display the list of credentials saved.
         '''
-       return cls.credentials_list
+        return cls.credentials_list
     @classmethod
     def find_by_site_name(cls,site_name):
         '''
@@ -40,7 +40,7 @@ class Credential:
         '''
         for credential in cls.credentials_list:
             if credential.site_name == site_name:
-                return site_name
+                return credential
 
 
 

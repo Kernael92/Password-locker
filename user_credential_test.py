@@ -62,6 +62,7 @@ class TestCredential(unittest.TestCase):
         '''
         tearDown method that does clean up after case has run.
         ''' 
+        Credential.credentials_list = []
     def test_init(self):
         '''
         To check if the object is initialized properly.
@@ -80,18 +81,29 @@ class TestCredential(unittest.TestCase):
         self.assertEqual(len(Credential.credentials_list),2)
     def test_display_all_credentials(self):
         '''
-        To check if the test_display_credential method displays the correct dredentials
+        method that returns a list of all credentials saved.
         '''
-        self.assertEqual(len(Credential.display_credentials(),Credential.credentials_list)
+        self.assertEqual(Credential.display_credentials(),Credential.credentials_list)
     def test_find_by_site_name(self):
         '''
         Test to check if the find_by_site_name method returns the correct credentials
         '''
-        self.new_credential.save_credentials()
-        facebook = Credential("Bobby","facebook","bobbyjoe","bobby001") #new credential
-        facebook.save_credential()
-        credential_exists = Credential.find_by_site_name('facebook')
-        self.assertEqual(credential_exists,facebook)
+        self.new_credential.save_credential()
+        test_credential = Credential("Bobby","facebook","bobbyjoe","bobby001") #new credential
+        test_credential.save_credential()
+        found_credential = Credential.find_by_site_name("facebook")
+        self.assertEqual(found_credential.site_name,test_credential.site_name)
+    # def test_generate_password(self):
+    #     '''
+    #     Test to generate a password with min characters of 8
+    #     '''
+    #     self.facebook = Credential('facebook','bobbyjoe','')
+    #     self.facebook.password = generate_password()
+    #     self.assertEqual()
+
+
+
+    
 
 
 
