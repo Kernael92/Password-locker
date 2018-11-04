@@ -41,7 +41,8 @@ def generate_password(min_char = 8, max_char = 12, allchar = string.ascii_letter
     '''
     Function that generates a password
     '''
-    return ''.join(random.choice(allchar) for x in range(min_char,max_char))
+    password =  ''.join(random.choice(allchar) for x in range(min_char,max_char))
+    return password
 def copy_credential(site_name):
         '''
         Function  that copies a credential's info
@@ -61,7 +62,7 @@ def main():
     print('\n')
 
     while True:
-            print("Use these short codes : cc - create a new credential, dc - display credentials, fc -find a credential, ex -exit the credential list ")
+            print("Use these short codes : cc - create a new credential, dc - display credentials, fc -find a credential, gp-generate password ex -exit the credential list ")
 
             short_code = input().lower()
 
@@ -86,7 +87,7 @@ def main():
 
                     save_credential(create_credential(user_name,site_name,account_name,password)) # create and save new credential.
                     print ('\n')
-                    print(f"New credential {user_name} {site_name} {account_name} {password}created")
+                    print(f"New credential {user_name} {site_name} {account_name} {password} created")
                     print ('\n')
 
             elif short_code == 'dc':
@@ -118,6 +119,8 @@ def main():
                             print(f"account name.......{search_credential.account_name}")
                     else:
                             print("That credential does not exist")
+            elif short_code =='gp':
+                print("This is your password:", password)
 
             elif short_code == "ex":
                     print("Bye .......")
