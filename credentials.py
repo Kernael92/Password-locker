@@ -1,6 +1,8 @@
 import random
 import string
 from user_credential import User
+import pyperclip
+
 class Credential:
     '''
     Class to create user account credentials, generate passwords and store their information.

@@ -1,5 +1,7 @@
 import random
 import string
+import pyperclip
+
 class User:
     '''
     Class to create user account and store their information
