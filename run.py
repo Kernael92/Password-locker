@@ -18,6 +18,11 @@ def display_credentials():
     return Credential.display_credentials()
 def find_credential(site_name):
     '''
-    Function that finds a contact by number and returns the contact
+    Function that finds a credential by site_name
     '''
     return Credential.find_by_site_name(site_name)
+def credential_exist(site_name):
+    '''
+    Function that check if a credential exists with that site_name and return a Boolean
+    '''
+    return Credential.credential_exist(site_name)

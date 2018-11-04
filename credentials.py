@@ -44,7 +44,7 @@ class Credential:
             if credential.site_name == site_name:
                 return credential
     @classmethod
-    def credential_exixt(cls,user_name):
+    def credential_exist(cls,user_name):
         '''
         Method that checks if a credential exists from the credentials list.
 
