@@ -1,6 +1,5 @@
 # Password-locker
 An application to allow us to generate and store passwords for various accounts
-# Password Locker
 
 ## Built By [Kernael Apuko](https://github.com/kernael92/)
 
