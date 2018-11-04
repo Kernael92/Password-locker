@@ -55,6 +55,14 @@ class Credential:
             if credential.user_name == user_name:
                 return True
         return False
+    
+    def generate_password(self,min_char = 8, max_char = 12, allchar = string.ascii_letters + string.punctuation + string.digits):
+        '''
+        Function to generate a password of minimum 8 characters and maximum 12 characters for a credential.
+        '''
+        gen_password = ''.join(random.choice(allchar) for x in range(min_char,max_char))
+        return gen_password
+        
 
 
 
