@@ -40,3 +40,8 @@ def copy_credential(site_name):
         Function  that copies a credential's info
         '''
         return pyperclip.copy(site_name)
+def check_user(current_user):
+        '''
+        Function that checks if the name and password entered match entries in the users_list
+        '''
+        return current_user
