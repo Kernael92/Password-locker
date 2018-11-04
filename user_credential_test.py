@@ -117,6 +117,22 @@ class TestCredential(unittest.TestCase):
 		        return pyperclip.copy(find_credential.password)
         Credential.copy_credential(self.new_credential.site_name)
         self.assertEqual("bobby001",pyperclip.paste())
+    def test_check_user(self):
+        '''
+        function to test whether the log in function check_user work as expected
+        '''
+        self.new_user = User("Kernael", "Apuko","oketch92")
+        self.new_user.save_user()
+        user2 = User("Mary","Jane","maryja01")
+        user2.save_user()
+
+        for user in User.users_list:
+	        if user.first_name == user2.first_name and user.password == user2.password:
+		        current_user = user.first_name
+        return current_user
+
+        self.assertEqual(current_user,(user2.password,user2.first_name))
+         
 
 
     
