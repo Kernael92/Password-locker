@@ -6,3 +6,8 @@ def  save_user(user):
         Function to save user
         '''
         user.save_user()
+def  save_credential(credential):
+        '''
+        Function to save user
+        '''
+        credential.save_credential()
