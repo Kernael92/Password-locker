@@ -4,6 +4,8 @@ from credentials import Credential
 import string
 import random
 import pyperclip
+from random import choice
+
 
 def create_credential(user_name,site_name,account_name,password):
     '''
@@ -62,7 +64,7 @@ def main():
     print('\n')
 
     while True:
-            print("Use these short codes : cc - create a new credential, dc - display credentials, fc -find a credential, gp-generate password ex -exit the credential list ")
+            print("Use these short codes : cc - create a new credential, dc - display credentials, fc -find a credential, cp-copy credential, gp-generate password ex -exit the credential list ")
 
             short_code = input().lower()
 
@@ -120,7 +122,24 @@ def main():
                     else:
                             print("That credential does not exist")
             elif short_code =='gp':
-                print("This is your password:", password)
+                if generate_password(min_char = 8, max_char = 12, allchar = string.ascii_letters + string.punctuation + string.digits):
+                    
+                    print ("This is your password:", password)
+
+            elif short_code == 'cp':
+                print("Enter the name of the site you want to copy")
+                copy_site_name = input()
+                if credential_exist(copy_site_name):
+                    copy_credential = find_credential(copy_site_name)
+                    print(f"{copy_credential.user_name} {copy_credential.site_name} {copy_credential.account_name} {copy_credential.password}")
+                    print('_' * 20)
+                    print(f"site_name.......{copy_credential.site_name}")
+                    print(f"account name.......{copy_credential.account_name}")
+                else:
+                    print("This credential does not exist")
+
+
+                    
 
             elif short_code == "ex":
                     print("Bye .......")
