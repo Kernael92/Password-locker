@@ -33,7 +33,8 @@ As a user I would like:
 * pip
 * pyperclip
 
-
+### Link
+* To view my application on github kindly click on the following link https://github.com/Kernael92/Password-locker/tree/gh-pages
 ### Cloning
 * In your terminal:
         
